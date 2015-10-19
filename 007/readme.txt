@@ -14,6 +14,6 @@ python run.py
 
 # -------------------------------------
 
-not a smart way to solv, but I got the number within 30 sec
-ok for now, i think other questions later on will force me to optimize
+# run.v1.py
+not a smart way to solve, the number comes out in about a minute...
 
