@@ -20,7 +20,6 @@ def create_a_bucket_with_primes(n):
 def find_sum_of_primes_below(n):
   my_dict = create_a_bucket_with_primes(n)
   primes = my_dict.keys()
-  primes.sort()
   return sum(primes)
 
 if __name__ == '__main__':
