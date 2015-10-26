@@ -1,3 +1,4 @@
+import argparse
 import os
 import time
 
@@ -12,11 +13,18 @@ def print_one_solution(path, dirname):
   end_time = time.time()
   time_delta = "%.3f" % (end_time-start_time)
   print "Time spent: " + str(time_delta) + " seconds"
+  print
 
-def print_all_solutions(path):
-  for dirname in os.listdir(path):
+def print_solutions(path, level):
+  if level == None:
+    for dirname in os.listdir(path):
+      print_one_solution(path, dirname)
+  else:
+    dirname = "%03d" % (level)
     print_one_solution(path, dirname)
-
 if __name__ == '__main__':
-  print_all_solutions(path)
+  parser = argparse.ArgumentParser()
+  parser.add_argument('-l', '--level', dest="level", type=int, help='level number', required=False)
+  args = parser.parse_args()
+  print_solutions(path, args.level)
 
